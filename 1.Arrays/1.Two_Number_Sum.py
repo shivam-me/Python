@@ -19,7 +19,7 @@ We can use a Stack here
 
 '''
 
-# Solution 1 starts
+# Solution 1
 # O(n^2) time | O(1) space
 def twoNumberSum(array, targetSum):
     result_list = [] # Target Array

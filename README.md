@@ -1,2 +1,2 @@
 # Python
- AlgoExpert Solutions
+ AlgoExpert.io Solutions
