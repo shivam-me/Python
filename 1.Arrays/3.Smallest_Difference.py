@@ -13,10 +13,12 @@ Sample output: [28, 26]
 
 #### Explanation
 
+To traverse in array use left and right pointer to traverse
+
 We can use a Stack here
 '''
 
-# O(nlog(n) + mlon(m)) time | O(1) space
+# O(nlog(n) + mlon(m)) time | O(1) space takes 0.133 seconds
 def smallestDifference(arrayOne, arrayTwo):
 	array_one = sorted(arrayOne)
 	array_two = sorted(arrayTwo)
@@ -38,9 +40,21 @@ def smallestDifference(arrayOne, arrayTwo):
 
 	return result_pair
 
+# My Solution O(n^2) Takes 0.127 seconds
+def small(arr1, arr2):
+    arr1 = sorted(arr1)
+    arr2 = sorted(arr2)
+    diff = float("inf")
+    for i in range(len(arr1)):
+        for j in range(len(arr2)):
+            if(abs(arr1[i]-arr2[j]) < diff):
+                diff = abs(arr1[i]-arr2[j])
+                m, n = i, j
 
-array_one = [-1, 5, 10, 20, 28, 3]
+    return [arr1[m], arr2[n]]
+
+array_one = [-1, 5, 10, 20,24,31,54,45,6,43,44,245,67,88,43,56, 28, 3]
 array_two = [26, 134, 135, 15, 17]
-print(smallestDifference(array_one,array_two))
+print(smallestDifference(array_one, array_two))
 
 

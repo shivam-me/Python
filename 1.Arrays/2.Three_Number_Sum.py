@@ -21,17 +21,35 @@ We can use a Stack here
 '''
 # O(n^2) time | O(n) space
 def three_number_sum(array, targetSum):
-    array.sort()
+    array.sort()  # [-8, -6, 1, 2, 3, 5, 6, 12]
     triplates = []
-    for i in range(len(array) - 2):
+    for i in range(len(array) - 2): # len(array)-2 because we dont want to include last 2 because it will be for left and right index
         left_index = i + 1
         right_index = len(array) - 1
         while left_index < right_index:
             sum = array[i] + array[left_index] + array[right_index]
+# From [-8, -6, 1, 2, 3, 5, 6, 12] value of array[i], array[left_index], array[right_index]
+                    # -8 -6 12
+                    # -8 1 12
+                    # -8 1 6
+                    # -8 2 6
+                    # -8 3 5
+                    # -6 1 12
+                    # -6 1 6
+                    # -6 1 5
+                    # -6 2 3
+                    # 1 2 12
+                    # 1 2 6
+                    # 1 2 5
+                    # 1 2 3
+                    # 2 3 12
+                    # 2 3 6
+                    # 2 3 5
+                    # 3 5 12
+                    # 3 5 6
+                    # 5 6 12
             if sum == targetSum:
-                triplates.append(array[i])
-                triplates.append(array[left_index])
-                triplates.append(array[right_index])
+                triplates.append([array[i], array[left_index], array[right_index]])
                 left_index += 1
                 right_index -= 1
             elif sum < targetSum:
@@ -44,4 +62,4 @@ def three_number_sum(array, targetSum):
 sample_input_array = [12, 3, 1, 2, -6, 5, -8, 6]
 sample_sum = 0
 result = three_number_sum(sample_input_array, sample_sum)
-print("The sets of triplates are: ", result)
+print(result)
