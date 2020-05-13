@@ -8,8 +8,8 @@ that sum up to the target sum and return a two-dimensional array of all these qu
 function should return an empty array.
 
 
-`Sample input: [7, 6, 4, -1, 1, 2], 16
-Sample output: [[7, 6, 4, -1], [7, 6, 1, 2]]`
+Sample input: [7, 6, 4, -1, 1, 2], 16
+Sample output: [[7, 6, 4, -1], [7, 6, 1, 2]]
 
 
 #### Solution
