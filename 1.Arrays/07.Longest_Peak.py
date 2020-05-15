@@ -35,7 +35,7 @@ def longestPeak(array):
 
         leftIdx = i - 2 # -1 after 1st iteration
 
-        while leftIdx >= 0 and array[leftIdx] < array[leftIdx + 1]: # 3<1
+        while leftIdx >= 0 and array[leftIdx] < array[leftIdx + 1]:
             leftIdx -= 1
 
         rightIdx = i + 2
@@ -49,12 +49,11 @@ def longestPeak(array):
 
     return longestPeakLen
 
-# My Solution
+# My Solution with peak elements
 
 
-def longestpeak(arr):
+def longestpeak1(arr):
     i = 1
-    ispeak = None
     peak_index = []
     peak_elements1 = []
     peak_elements2 = []
@@ -65,7 +64,6 @@ def longestpeak(arr):
         i += 1
     longest_peak = 0
     for i in peak_index:
-        curr_peak = 0
         j = i
         left_count = 0
         right_count = 0
@@ -84,6 +82,29 @@ def longestpeak(arr):
             peak_elements2 = peak_elements1
             peak_elements1 = []
     print(peak_elements2)
+    return longest_peak
+
+# My solution small
+def longestpeak(arr):
+    i = 1
+    peak_index = []
+    longest_peak = 0
+    while i < len(arr)-1:
+        ispeak = arr[i-1] < arr[i] > arr[i+1]
+        if ispeak:
+            peak_index.append(i)
+        if i in peak_index:
+            k,j=i,i
+            left_count,right_count = 0,0
+            while(arr[k] >= arr[k-1]):  # Counting numbers to the left of index
+                left_count += 1
+                k -= 1
+            while(arr[j] >= arr[j+1]):  # Counting numbers to the right of index
+                right_count += 1
+                j += 1
+            curr_peak_len = left_count+right_count+1
+            longest_peak=max(curr_peak_len,longest_peak)
+        i +=1
     return longest_peak
 
 
