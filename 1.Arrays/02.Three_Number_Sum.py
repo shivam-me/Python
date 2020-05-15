@@ -15,6 +15,7 @@ Sample output: [[-8, 2, 6], [-8, 3, 5], [-6, 1, 5]]
 
 
 #### Explanation
+don't use hash table as we can get duplicate values of the solution and we would have to optimize that
 
 We can use a Stack here
 
@@ -29,7 +30,7 @@ def three_number_sum(array, targetSum):
         while left_index < right_index:
             sum = array[i] + array[left_index] + array[right_index]
 # From [-8, -6, 1, 2, 3, 5, 6, 12] value of array[i], array[left_index], array[right_index]
-                    # -8 -6 12
+                    # -8 -6 12 sum<0 therefor left++ ( from -6 to 1)
                     # -8 1 12
                     # -8 1 6
                     # -8 2 6

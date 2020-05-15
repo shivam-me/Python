@@ -3,7 +3,7 @@
 
 #### Problem Statement
 
-Imagine that you're a teacher who's just graded the nal exam in a class. You have a list of student scores on the nal exam in a particular order (not necessarily
+Imagine that you're a teacher who's just graded the final exam in a class. You have a list of student scores on the nal exam in a particular order (not necessarily
 sorted), and you want to reward your students. You decide to do so fairly by giving them arbitrary rewards following two rules: rst, all students must receive at
 least one reward; second, any given student must receive strictly more rewards than an adjacent student (a student immediately to the left or to the right) with a
 lower score and must receive strictly fewer rewards than an adjacent student with a higher score. Assume that all students have different scores; in other words,

@@ -3,7 +3,7 @@
 
  # Problem Statement
 
-Imagine that you want to schedule a meeting of a certainbduration with a co-worker. You have access to your calendar and your co-worker's
+Imagine that you want to schedule a meeting of a certain duration with a co-worker. You have access to your calendar and your co-worker's
 calendar (both of which contain your respective meetings for the day, in the form of [startTime, endTime] ), as well as both of your daily
 bounds (i.e., the earliest and latest times at which you're available for meetings every day, in the form of [earliestTime, latestTime].
 

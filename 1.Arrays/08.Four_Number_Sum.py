@@ -3,9 +3,10 @@ Four Number Sum
 
 #### Problem Statement
 
-Write a function that takes in a non-empty array of distinct integers and an integer representing a target sum. The function should nd all quadruplets in the array
-that sum up to the target sum and return a two-dimensional array of all these quadruplets in no particular order. If no four numbers sum up to the target sum, the
-function should return an empty array.
+Write a function that takes in a non-empty array of distinct integers and an integer representing a target sum.
+The function should nd all quadruplets in the array that sum up to the target sum and return a two-dimensional
+array of all these quadruplets in no particular order. If no four numbers sum up to the target sum, the function
+should return an empty array.
 
 
 Sample input: [7, 6, 4, -1, 1, 2], 16
@@ -18,16 +19,17 @@ Sample output: [[7, 6, 4, -1], [7, 6, 1, 2]]
 #   Average:    O(n^2) time  | O(n^2) space
 #   Worst:      O(n^3) time  | O(n^2) space
 def fourNumberSum(array, targetSum):
-    allPairSums = {}
+    allPairSums = {}  # For hash map
     quadruplets = []
+    # As we can skip first and last values as it wont add to hashmap or simply for i in range(0, len(array)):
     for i in range(1, len(array) - 1):
         for j in  range(i + 1, len(array)):
             currentSum = array[i] + array[j]
             difference = targetSum - currentSum
             if difference in allPairSums:
                 for pair in allPairSums[difference]:
-                    quadruplets.append(pair + [array[i], array[j]])
-        for k in range(0, i):
+                    quadruplets.append(pair + [array[i], array[j]]) # Pair is array stored in hashmap
+        for k in range(0, i): # For adding pairs to hashmap this should be always done after the above loop
             currentSum = array[i] +  array[k]
             if currentSum not in allPairSums:
                 allPairSums[currentSum] = [[array[k], array[i]]]
@@ -45,7 +47,7 @@ print('Quadruplets: ', output)
 
 
 
-# From Leetcode.com solution
+# From Leetcode.com solution all are trash
 # https://leetcode.com/problems/4sum/discuss/8545/Python-140ms-beats-100-and-works-for-N-sum-(Ngreater2)
 # https://leetcode.com/problems/4sum/discuss/8759/A-conise-python-solution-based-on-ksum
 

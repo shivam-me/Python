@@ -18,7 +18,7 @@ To traverse in array use left and right pointer to traverse
 We can use a Stack here
 '''
 
-# O(nlog(n) + mlon(m)) time | O(1) space takes 0.133 seconds
+# O(nlog(n) + mlon(m)) time | O(1)
 def smallestDifference(arrayOne, arrayTwo):
 	array_one = sorted(arrayOne)
 	array_two = sorted(arrayTwo)
@@ -40,7 +40,7 @@ def smallestDifference(arrayOne, arrayTwo):
 
 	return result_pair
 
-# My Solution O(n^2) Takes 0.127 seconds
+# My Solution O(n^2)
 def small(arr1, arr2):
     arr1 = sorted(arr1)
     arr2 = sorted(arr2)
