@@ -17,7 +17,7 @@ array = [1,2,3,4,0,10,6,5,-1,-3,2,3]
 
 Sample Output :
 
-6 # 0,10,6,5,-1,-3
+6 // 0,10,6,5,-1,-3
 
 
 
@@ -30,10 +30,10 @@ def longestPeak(array):
     while i < len(array) - 1:
         isPeak = array[i - 1] < array[i] > array[i + 1]
         if not isPeak:
-            i += 1   # i will increment till 5th pos i.e 10 then isPeak=True
+            i += 1
             continue
 
-        leftIdx = i - 2 # -1 after 1st iteration
+        leftIdx = i - 2
 
         while leftIdx >= 0 and array[leftIdx] < array[leftIdx + 1]:
             leftIdx -= 1
