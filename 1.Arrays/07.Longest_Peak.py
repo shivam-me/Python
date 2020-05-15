@@ -49,63 +49,27 @@ def longestPeak(array):
 
     return longestPeakLen
 
-# My Solution with peak elements
-
-
-def longestpeak1(arr):
-    i = 1
-    peak_index = []
-    peak_elements1 = []
-    peak_elements2 = []
-    while i < len(arr)-1:
-        ispeak = arr[i-1] < arr[i] > arr[i+1]
-        if ispeak:
-            peak_index.append(i)   # Append the peak index value in list [3,5] i.e value 4 and 10
-        i += 1
-    longest_peak = 0
-    for i in peak_index:
-        j = i
-        left_count = 0
-        right_count = 0
-        peak_elements1.append(arr[i]) # Append the root index value to peak elements
-        while(arr[i] >= arr[i-1]): # Counting numbers to the left of index
-            peak_elements1.append(arr[i-1])
-            left_count += 1
-            i -= 1
-        while(arr[j] >= arr[j+1]):  # Counting numbers to the right of index
-            peak_elements1.append(arr[j+1])
-            right_count += 1
-            j += 1
-        curr_peak_len = left_count+right_count+1 # 1 because adding root index to currentpeak
-        if(curr_peak_len > longest_peak):
-            longest_peak = curr_peak_len
-            peak_elements2 = peak_elements1
-            peak_elements1 = []
-    print(peak_elements2)
-    return longest_peak
-
 # My solution small
 def longestpeak(arr):
     i = 1
     peak_index = []
     longest_peak = 0
-    while i < len(arr)-1:
+    for i in range(1,len(arr)-1):
         ispeak = arr[i-1] < arr[i] > arr[i+1]
         if ispeak:
             peak_index.append(i)
-        if i in peak_index:
+    for i in peak_index:
             k,j=i,i
             left_count,right_count = 0,0
-            while(arr[k] >= arr[k-1]):  # Counting numbers to the left of index
-                left_count += 1
+            while(k!= 0 and arr[k] > arr[k-1]):
                 k -= 1
-            while(arr[j] >= arr[j+1]):  # Counting numbers to the right of index
+                left_count += 1
+            while(j!=len(arr)-1 and arr[j] > arr[j+1]):
+                j +=1
                 right_count += 1
-                j += 1
             curr_peak_len = left_count+right_count+1
             longest_peak=max(curr_peak_len,longest_peak)
-        i +=1
     return longest_peak
 
 
-print(longestpeak([1, 2, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
+print(longestpeak([1,2,3,5,4]))
